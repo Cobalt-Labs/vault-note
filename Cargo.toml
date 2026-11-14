@@ -1,6 +1,7 @@
 [package]
-name = "localfirst_notes_base"
+name = "vault-note"
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[workspace]
+members = ["frontend", "backend"]
