@@ -1,0 +1,15 @@
+[build]
+target = "index.html"
+
+[watch]
+watch = ["src", "style/tailwind.css", "index.html", "Cargo.toml"]
+ignore = ["style/output.css"]
+
+[[hooks]]
+stage = "pre_build"
+command = "sh"
+command_arguments = ["-c", "npm run build:css"]
+
+[hooks.windows]
+command = "cmd"
+command_arguments = ["/c", "npm run build:css"]
