@@ -8,5 +8,7 @@ pub async fn router() -> Router {
         .allow_origin(Any)
         .allow_methods(Any)
         .allow_headers(Any);
-    Router::new().route("/api/notes", post(save_note)).layer(cors)
+    Router::new()
+        .route("/api/notes", post(save_note))
+        .layer(cors)
 }

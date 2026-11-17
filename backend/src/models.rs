@@ -2,6 +2,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct Note {
-    pub title: String,
-    pub _content: String,
+    pub id: Option<String>,
+    pub title: Option<String>,
+    pub _content: Option<String>,
 }
