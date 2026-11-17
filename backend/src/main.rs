@@ -6,7 +6,7 @@ mod routes;
 async fn main() {
     let app = routes::router().await;
     let port = "127.0.0.1:3000".to_string();
-    
+
     let listener = tokio::net::TcpListener::bind(&port)
         .await
         .expect("Failed to bind TCP listener");
