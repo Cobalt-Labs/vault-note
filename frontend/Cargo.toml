@@ -4,10 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-gloo-net = "0.7.0"
+gloo-net = { version = "0.7.0", features = ["json"] }
 leptos = { version = "0.8.23", features = ["csr"] }
 leptos-use = "0.20.0"
 serde = { version = "1.0.229", features = ["derive"] }
-uuid = { version = "1.29.2", features = ["v4", "js"] }
+serde_json = "1.0"
 wasm-bindgen-futures = "0.4.80"
 web-sys = { version = "0.3.107", features = ["Window"] }
