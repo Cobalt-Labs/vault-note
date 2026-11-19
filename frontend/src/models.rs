@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
 
-/// Sent to the backend when creating/updating a note.
 #[derive(Debug, Clone, Serialize)]
 pub struct CreateNoteRequest {
     pub id: Option<String>,
@@ -8,7 +7,7 @@ pub struct CreateNoteRequest {
     pub content: String,
 }
 
-/// A fully-hydrated note as returned from the backend.
+#[allow(dead_code)]
 #[derive(Debug, Clone, Deserialize)]
 pub struct Note {
     pub id: String,
@@ -18,7 +17,7 @@ pub struct Note {
     pub updated_at: String,
 }
 
-/// Successful save response.
+#[allow(dead_code)]
 #[derive(Debug, Clone, Deserialize)]
 pub struct SaveNoteResponse {
     pub success: bool,
