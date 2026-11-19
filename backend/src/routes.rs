@@ -1,7 +1,7 @@
-use axum::{Router, routing::{get, post}};
+use axum::{Router, routing::{delete, get as get_route, post}};
 use tower_http::cors::{Any, CorsLayer};
 
-use crate::handlers::save_note::{list_notes, save_note};
+use crate::handlers::save_note::{delete_note, list_notes, save_note};
 use crate::store::{new_store, NoteStore};
 
 pub async fn router() -> Router {
@@ -13,7 +13,8 @@ pub async fn router() -> Router {
         .allow_headers(Any);
 
     Router::new()
-        .route("/api/notes", post(save_note).get(list_notes))
+        .route("/api/notes", post(save_note).get(get_route(list_notes)))
+        .route("/api/notes/:id", delete(delete_note))
         .layer(cors)
         .with_state(store)
 }
